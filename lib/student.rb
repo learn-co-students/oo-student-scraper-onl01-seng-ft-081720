@@ -1,5 +1,5 @@
 require_relative "../lib/scraper.rb"
-
+require 'pry'
 class Student
 
   attr_accessor :name, :location, :twitter, :linkedin, :github, :blog, :profile_quote, :bio, :profile_url 
@@ -19,24 +19,14 @@ class Student
     end
   end
 
-  def add_student_attributes
-
+  def add_student_attributes(student_hash)
+    student_hash.each {|key, value| self.send(("#{key}="), value)}
   end
 
   def self.all
     @@all
   end
 
-  def self.create_from_collection(students_array)
-    
-  end
-
-  def add_student_attributes(attributes_hash)
-    
-  end
-
-  def self.all
-    
-  end
 end
+
 
