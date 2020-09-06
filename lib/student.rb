@@ -1,3 +1,5 @@
+require_relative "../lib/scraper.rb"
+
 class Student
 
   attr_accessor :name, :location, :twitter, :linkedin, :github, :blog, :profile_quote, :bio, :profile_url 
@@ -5,7 +7,22 @@ class Student
   @@all = []
 
   def initialize(student_hash)
-    
+    self.name = student_hash[:name]
+    self.location = student_hash[:location]
+    self.profile_url = student_hash[:profile_url]
+    @@all << self
+  end
+
+  def self.create_from_collection(students_array)
+
+  end
+
+  def add_student_attributes
+
+  end
+
+  def self.all
+    @@all
   end
 
   def self.create_from_collection(students_array)
